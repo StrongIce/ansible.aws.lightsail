@@ -6,6 +6,12 @@ manage the firewall, disks, static ip, etc., so I decided to write my own module
 A set of modules describing API Boto3 AWS Lightsail [link to documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html?highlight=lightsail#id437) <br>
 Authorization through the standard AWS mechanism from the  [documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html)
 
+### Dependencies
+  - python3
+  - boto3
+  - botocore
+  - ansible-core module aws
+
 #### Manage:
   - Creating virtual machines
   - Starting, stoping, removing, rebooting and getting information about the virtual machine
@@ -31,6 +37,12 @@ ____________________________________________
   - Присвоить статический IP виртуальной машине 
   - Отвязать сатический IP от виртуальной машины
   - Получить информации об IP
+
+### Зависимости
+  - python3
+  - boto3
+  - botocore
+  - ansible-core module aws
 
 #### Планы по развитию: 
 Добавить управление фаерволом и дисками виртульной машины
