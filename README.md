@@ -6,7 +6,7 @@ manage the firewall, disks, static ip, etc., so I decided to write my own module
 A set of modules describing API Boto3 AWS Lightsail [link to documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html?highlight=lightsail#id437) <br>
 Authorization through the standard AWS mechanism from the  [documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html)
 
-### Dependencies
+#### Dependencies
   - python3
   - boto3
   - botocore
@@ -31,7 +31,7 @@ ____________________________________________
 Авторизация через стандартный механизм AWS  из [документации](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html)
 
 
-### Зависимости
+#### Зависимости
   - python3
   - boto3
   - botocore
