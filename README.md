@@ -30,6 +30,14 @@ ____________________________________________
 Набор модулей описывающих API Boto3 AWS Lightsail [ссылка на документацию](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lightsail.html?highlight=lightsail#id437) <br>
 Авторизация через стандартный механизм AWS  из [документации](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html)
 
+
+### Зависимости
+  - python3
+  - boto3
+  - botocore
+  - ansible-core module aws
+
+
 #### Умеет:
   - Создать виртульную машину 
   - Запустить, остановить, удалить, перезагрузить виртульную машину. А так же получить информацию о ней. 
@@ -37,12 +45,6 @@ ____________________________________________
   - Присвоить статический IP виртуальной машине 
   - Отвязать сатический IP от виртуальной машины
   - Получить информации об IP
-
-### Зависимости
-  - python3
-  - boto3
-  - botocore
-  - ansible-core module aws
 
 #### Планы по развитию: 
 Добавить управление фаерволом и дисками виртульной машины
