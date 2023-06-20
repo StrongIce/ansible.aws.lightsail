@@ -72,8 +72,3 @@ _____________________________________________
         lightsail.vm:
           name: vmname 
           state: delete
-
-
-
-
-
