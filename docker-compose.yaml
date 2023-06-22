@@ -1,6 +1,8 @@
 services:
-  traefik:
-    image: traefik:v2.9.9
+  auth:
+    container_name: auth
+    hostname: auth
+    image: ${auth_image}
     command:
       - '--accesslog=true'
       - '--providers.docker=true'

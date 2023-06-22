@@ -1,16 +1,18 @@
-version: "3.3"
-
 services:
-  nginx:
-    image: nginx:alpine
-    container_name: shop.nginx
+  traefik:
+    image: traefik:v2.9.9
+    command:
+      - '--accesslog=true'
+      - '--providers.docker=true'
+      - '--providers.docker.exposedbydefault=false'
+      - '--entrypoints.http=true'
+      - '--entrypoints.http.address=:80'
+      - '--log=true'
+      - '--log.level=ERROR'
+      - '--entryPoints.http.forwardedHeaders.insecure'
     volumes:
-      - ./www/:/application
-      - ./infrastructure/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     ports:
-      - ${WEBSERVER_PORT}:80
-    depends_on:
-      - php
-    # restart: always
+      - 8080:80
 
 
