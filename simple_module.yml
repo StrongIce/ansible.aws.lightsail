@@ -1,0 +1,51 @@
+--- 
+- name: Test
+  hosts: localhost 
+  gather_facts: false 
+  vars:
+    vmname: vm-test
+    ipname: ip-2
+  tasks: 
+  - name: Create VM
+    lightsail.vm:
+      name: "{{ vmname }}"
+      state: new
+      ip_type: ipv4
+      blueprint_id: ubuntu_20_04
+      bundle_id: small_2_0
+      key_pair_name: my_open_key
+      region: eu-central-1
+      zone: eu-central-1a
+    register: ubnt
+
+  - name: Allocate static ip
+    lightsail.ip:
+      name: "{{ ipname }}"
+      state:  new
+
+  - name: Attach static IP
+    lightsail.ip:
+      name: "{{ ipname }}"
+      instance: "{{ vmname }}"
+      state:  attach
+  
+  - name: info static IP
+    lightsail.ip:
+      name: "{{ ipname }}"
+      state:  info 
+
+  - name: Get VM info
+    lightsail.vm:
+      name: "{{ vmname }}"
+      state: info
+    register: ubnt
+
+  - name: Detach static IP
+    lightsail.ip:
+      name: "{{ ipname }}"
+      state:  detach
+
+  - name: Show VM IP 
+    debug:
+      msg: "{{ ubnt.instance.public_ip_address }}"
+

@@ -1,0 +1,16 @@
+services:
+  traefik:
+    image: traefik:v2.9.9
+    command:
+      - '--accesslog=true'
+      - '--providers.docker=true'
+      - '--providers.docker.exposedbydefault=false'
+      - '--entrypoints.http=true'
+      - '--entrypoints.http.address=:80'
+      - '--log=true'
+      - '--log.level=ERROR'
+      - '--entryPoints.http.forwardedHeaders.insecure'
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 8080:80
